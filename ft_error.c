@@ -6,16 +6,14 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 15:59:07 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/30 15:59:54 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/30 18:04:36 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_error(char *str)
+void	ft_error(void)
 {
-	if (str)
-		free(str);
 	ft_putstr_fd("Error\n", 1);
 	exit(1);
 }

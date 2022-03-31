@@ -6,38 +6,45 @@
 #    By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 17:10:08 by ksaffron          #+#    #+#              #
-#    Updated: 2022/02/04 18:20:53 by ksaffron         ###   ########.fr        #
+#    Updated: 2022/03/31 16:09:46 by ksaffron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-
-#LIBFT = ./libft/libft.a
-
-FLAGS = -Wall -Wextra -Werror
-
-SRC = so_long.c
-
-OBJ = $(patsubst %.c, %.o, $(SRC))
+FLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
+CC = gcc
 
 HEADER = so_long.h
 
+SOURCE =	so_long.c ft_error.c ft_read_map.c
+
+OBJECTS = $(SOURCE:.c=.o)
+LIBFT_SOURCE = ./libft/
+LIBFT = libft.a
+
 RM = rm -f
 
-all:	$(NAME)
+all: $(NAME)
 
-$(NAME):	$(HEADER) $(OBJ)
-	cc $(FLAGS) $(OBJ) -Lminilibx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+%.o : %.c $(HEADER) Makefile
+	$(CC) $(FLAGS) -I. -I$(LIBFT_SOURCE) -Imlx -c $< -o $@
 
-%.o: %.c
-	cc $(FLAGS) -Imlx -c $< -o $@ -I $(HEADER)
+$(NAME): $(OBJECTS) $(HEADER) $(LIBFT_SOURCE)$(LIBFT) Makefile
+	$(CC) $(FLAGS) $(OBJECTS) $(LIBFT_SOURCE)$(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+
+$(LIBFT_SOURCE)$(LIBFT): libft ;
+
+libft:
+	make bonus -C $(LIBFT_SOURCE)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJECTS)
+	make clean -C $(LIBFT_SOURCE)
 
-fclean:	clean
+fclean: clean
 	$(RM) $(NAME)
+	make fclean -C $(LIBFT_SOURCE)
 
-re: clean fclean all
+re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft
