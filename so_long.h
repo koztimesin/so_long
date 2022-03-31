@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/31 17:36:32 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:13:49 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ typedef struct s_data {
 
 char	**ft_read_map(char *file);
 void	ft_error(void);
+void	ft_check_name(char *file);
 
 #endif

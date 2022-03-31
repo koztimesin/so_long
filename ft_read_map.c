@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:23:10 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/31 17:47:47 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:13:33 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,13 @@ char	**ft_read_map(char *file)
 	if (line)
 		free(line);
 	return (map);
+}
+
+void	ft_check_name(char *file)
+{
+	int	size;
+
+	size = ft_strlen(file);
+	if (ft_strncmp(&file[size - 4], ".ber\0", 5))
+		ft_error();
 }
