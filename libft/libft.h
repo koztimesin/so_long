@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 19:09:06 by ksaffron          #+#    #+#             */
-/*   Updated: 2021/10/26 18:52:19 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/04/02 16:58:13 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+char		**ft_free_space(char **dest);
 typedef struct s_list
 {
 	void			*content;

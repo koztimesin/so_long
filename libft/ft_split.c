@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:38:06 by ksaffron          #+#    #+#             */
-/*   Updated: 2021/10/26 18:46:01 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/04/02 16:57:53 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_count_words(char const *s, char c)
 	return (words);
 }
 
-static char	**ft_free_space(char **dest)
+char	**ft_free_space(char **dest)
 {
 	int	j;
 
