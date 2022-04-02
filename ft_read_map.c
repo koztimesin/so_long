@@ -6,11 +6,31 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:23:10 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/31 18:13:33 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/04/02 17:54:26 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdio.h>
+
+static char	*strjoin_ft(char const *s1, char const *s2)
+{
+	char	*s3;
+	int		i;
+
+	i = 0;
+	s3 = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!s3)
+		return (NULL);
+	while (s1 && s1[i])
+	{
+		s3[i] = s1[i];
+		i++;
+	}
+	s3[i] = '\0';
+	ft_strlcat(s3, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
+	return (s3);
+}
 
 static char	*get_next_line(char *file)
 {
@@ -20,42 +40,50 @@ static char	*get_next_line(char *file)
 	char	*result;
 
 	fd = open(file, O_RDONLY);
-	if (fd < 0 )
+	if (fd < 0)
 		ft_error();
 	size = 1;
 	while (size)
 	{
 		size = read(fd, temp, BUFFER_SIZE);
-		if (fd < 0)
+		if (size < 0)
 		{
 			free(temp);
 			return (NULL);
 		}
 		temp[size] = '\0';
-		result = ft_strjoin(result, temp);
-		if (!result)
-		{
-			free(result);
-			return (NULL);
-		}
+		result = strjoin_ft(result, temp);
 	}
 	return (result);
 }
 
-char	**ft_read_map(char *file)
+void	ft_read_map(t_game *game, char *file)
 {
 	char	*line;
-	char	**map;
+	char	*temp_line;
+	char	**map1;
+	int		count;
+	int		j;
+
+	count = 0;
+	j = -1;
 	line = get_next_line(file);
-	map = ft_split(line, '\n');
-	if (!map)
-	{
-		free(map);
-		return (NULL);
-	}
+	temp_line = ft_strtrim(line, "\n");
+	while (temp_line[++j])
+		if (temp_line[j] == '\n')
+			count++;
+	j = -1;
+	free(temp_line);
+	map1 = ft_split(line, '\n');
 	if (line)
 		free(line);
-	return (map);
+	while (map1[++j])
+		;
+	if (count + 1 != j)
+		ft_free_space(map1);
+	if (count + 1 != j)
+		ft_error();
+	game->map = map1;
 }
 
 void	ft_check_name(char *file)
@@ -63,6 +91,6 @@ void	ft_check_name(char *file)
 	int	size;
 
 	size = ft_strlen(file);
-	if (ft_strncmp(&file[size - 4], ".ber\0", 5))
+	if (ft_strncmp(&file[size - 4], ".ber\0", 5) || size < 5)
 		ft_error();
 }
