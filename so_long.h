@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/31 18:13:49 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/04/02 15:39:47 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,21 @@
 # include "./libft/libft.h"
 # include <fcntl.h>
 
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_data;
+typedef struct s_game {
+	char			**map;
+	void			*mlx;
+	void			*window;
+	unsigned int	height;
+	unsigned int	weight;
+	unsigned int	px;
+	unsigned int	py;
+	unsigned int	coins;
+	unsigned int	status;
+	unsigned int	score;
+	unsigned int	moves;
+}				t_game;
 
-char	**ft_read_map(char *file);
+void	ft_read_map(t_game *game, char *file);
 void	ft_error(void);
 void	ft_check_name(char *file);
 
