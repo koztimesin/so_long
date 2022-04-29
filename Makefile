@@ -6,7 +6,7 @@
 #    By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 17:10:08 by ksaffron          #+#    #+#              #
-#    Updated: 2022/03/31 16:09:46 by ksaffron         ###   ########.fr        #
+#    Updated: 2022/04/29 12:54:16 by ksaffron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC = gcc
 
 HEADER = so_long.h
 
-SOURCE =	so_long.c ft_error.c ft_read_map.c
+SOURCE =	so_long.c ft_error.c ft_read_map.c \
+			correctmap.c
 
 OBJECTS = $(SOURCE:.c=.o)
 LIBFT_SOURCE = ./libft/

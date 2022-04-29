@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/02 15:39:47 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/04/29 12:54:00 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ typedef struct s_game {
 void	ft_read_map(t_game *game, char *file);
 void	ft_error(void);
 void	ft_check_name(char *file);
+void	ft_correctmap(char	**map);
 
 #endif

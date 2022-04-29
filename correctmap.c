@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   correctmap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 17:14:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/29 12:54:46 by ksaffron         ###   ########.fr       */
+/*   Created: 2022/04/29 12:43:24 by ksaffron          #+#    #+#             */
+/*   Updated: 2022/04/29 13:10:45 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
+#include "stdio.h"
 
-int	main(int argc, char **argv)
+void	ft_correctmap(char	**map)
 {
-	t_game	game;
+	int	x;
+	int	y;
 
-	if (argc != 2)
-		ft_error();
-	ft_check_name(argv[1]);
-	ft_read_map(&game, argv[1]);
-	ft_correctmap(game.map);
+	y = -1;
+	while (map[++y])
+	{
+		x = -1;
+		while (map[y][++x])
+			if (map[y][x] != '1' && map[y][x] != '0' && map[y][x] != 'E'
+			&& map[y][x] != 'C' && map[y][x] != 'P' && map[y][x] != 'B')
+				ft_error();
+	}
 }
