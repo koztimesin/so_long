@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/05 16:02:14 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/05 19:02:18 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void	ft_check_name(char *file);
 void	ft_correctmap(char	**map);
 void	map_size(t_game *game);
 void	ft_game_init(t_game *game);
+void	ft_get_into(t_game *game);
 
 #endif
