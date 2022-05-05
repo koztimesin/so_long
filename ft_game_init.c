@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_game_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 17:14:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/05 15:58:38 by ksaffron         ###   ########.fr       */
+/*   Created: 2022/05/05 15:58:54 by ksaffron          #+#    #+#             */
+/*   Updated: 2022/05/05 16:01:36 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	ft_game_init(t_game *game)
 {
-	t_game	game;
-
-	if (argc != 2)
-		ft_error();
-	ft_check_name(argv[1]);
-	ft_read_map(&game, argv[1]);
-	ft_correctmap(game.map);
-	map_size(&game);
-	
+	game->mlx = mlx_init();
+	game->window = mlx_new_window(game->mlx, game->length, game->height, "so_long");
 }
