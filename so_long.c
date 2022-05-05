@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 17:14:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/29 12:54:46 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/04/29 16:38:14 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,6 @@ int	main(int argc, char **argv)
 	ft_check_name(argv[1]);
 	ft_read_map(&game, argv[1]);
 	ft_correctmap(game.map);
+	map_size(&game);
+	printf("%d x %d\n", game.length, game.height);
 }
