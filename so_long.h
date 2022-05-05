@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/29 16:31:26 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:13:29 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,20 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+# define W 13
+# define S 1
+# define A 0
+# define D 2
+# define ESC 53
+
+# define KEYEXIT 17
+
+# define WALL "./assets/tile01.xpm"
+# define GROUND "./assets/tile00.xpm"
+# define TREAT "./assets/ball.xpm"
+# define PLAYER "./assets/player_S00.xpm"
+# define EXIT "./assets/ladder.xpm"
 
 # include "./minilibx/mlx.h"
 # include "./libft/libft.h"
