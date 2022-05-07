@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 17:14:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/05 19:05:28 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/07 15:14:39 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int	main(int argc, char **argv)
 	map_size(&game);
 	ft_game_init(&game);
 	ft_get_into(&game);
-	printf("COINS - %d\n", game.coins);
-	printf("PLAYER POS: %d | %d\n", game.px, game.py);
+	
 }
