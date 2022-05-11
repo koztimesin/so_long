@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 15:05:05 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/07 15:09:32 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:14:15 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_draw_map(t_game *game, char *asset, int x, int y)
 	int		img_height;
 	int		img_width;
 
-	img = mlx_xpm_to_image(game->mlx, asset, &img_width, &img_height);
+	img = mlx_xpm_file_to_image(game->mlx, asset, &img_width, &img_height);
 	mlx_put_image_to_window(game->mlx, game->window, img, x, y);
 }
 
@@ -26,21 +26,20 @@ void	ft_draw_img(t_game *game)
 {
 	int	x, y = 0;
 
-	while (game->map[y])
+	while (y < game->height)
 	{
 		x = 0;
-		while (game->map[y][x])
+		while (x < game->length)
 		{
+			ft_draw_map(game, GROUND, x * 64, y * 64);
 			if (game->map[y][x] == 'E')
-				ft_draw_map(game, EXIT, x, y);
+				ft_draw_map(game, EXIT, x * 64, y * 64);
 			else if (game->map[y][x] == '1')
-				ft_draw_map(game, WALL, x, y);
+				ft_draw_map(game, WALL, x * 64, y * 64);
 			else if (game->map[y][x] == 'P')
-				ft_draw_map(game, PLAYER, x, y);
+				ft_draw_map(game, PLAYER, x * 64, (y - 1) * 64);
 			else if (game->map[y][x] == 'C')
-				ft_draw_map(game, TREAT, x ,y);
-			else
-				ft_draw_map(game, GROUND, x, y);
+				ft_draw_map(game, TREAT, x * 64, y * 64);
 			x++;
 		}
 		y++;
