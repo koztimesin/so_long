@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 18:58:23 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/05 19:03:36 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:27:55 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_get_into(t_game *game)
 
 	y = 0;
 	c = 0;
-	while (game->map[y])
+	while (y < game->height)
 	{
 		x = 0;
-		while (game->map[y][x])
+		while (x < game->length)
 		{
 			if (game->map[y][x] == 'P')
 			{
