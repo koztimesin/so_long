@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/07 15:16:45 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/07 16:29:49 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ typedef struct s_game {
 	char			**map;
 	void			*mlx;
 	void			*window;
-	unsigned int	height;
-	unsigned int	length;
-	unsigned int	px;
-	unsigned int	py;
-	unsigned int	coins;
-	unsigned int	status;
-	unsigned int	score;
-	unsigned int	moves;
+	int	height;
+	int	length;
+	int	px;
+	int	py;
+	int	coins;
+	int	status;
+	int	score;
+	int	moves;
 }				t_game;
 
 void	ft_read_map(t_game *game, char *file);
