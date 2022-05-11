@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:30:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/11 17:46:52 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/11 18:06:24 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 static void	ft_print_move(t_game *game)
 {
-	ft_putnbr_fd('game->moves\n', 1);
+	ft_putnbr_fd(game->moves, 1);
+	ft_putchar_fd('\n', 1);
 	game->moves++;
 }
 
-void	ft_move(t_game *game, int key)
+int	ft_move(t_game *game, int key)
 {
 	if (key == W)
 		ft_move_player(game, 0, -1);
@@ -28,6 +29,7 @@ void	ft_move(t_game *game, int key)
 		ft_move_player(game, -1, 0);
 	if (key == D)
 		ft_move_player(game, 1, 0);
+	return (0);
 }
 
 void	ft_move_player(t_game *game, int x, int y)

@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 15:05:05 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/11 17:14:15 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:58:35 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_draw_map(t_game *game, char *asset, int x, int y)
 	mlx_put_image_to_window(game->mlx, game->window, img, x, y);
 }
 
-void	ft_draw_img(t_game *game)
+int	ft_draw_img(t_game *game)
 {
 	int	x, y = 0;
 
@@ -44,4 +44,5 @@ void	ft_draw_img(t_game *game)
 		}
 		y++;
 	}
+	return (0);
 }
