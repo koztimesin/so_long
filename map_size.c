@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 16:04:42 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/29 16:40:29 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/07 16:30:01 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	map_size(t_game *game)
 		x++;
 	while (game->map[y])
 		y++;
-	game->height = y * 64;
-	game->length = x * 64;
+	game->height = y;
+	game->length = x;
 }
