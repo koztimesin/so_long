@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/18 16:35:12 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:44:52 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 
 # define WALL "./assets/tile01.xpm"
 # define GROUND "./assets/tile00.xpm"
-# define TREAT "./assets/ball.xpm"
-# define PLAYER "./assets/stone.xpm"
+# define TREAT "./assets/ketchup.xpm"
+# define PLAYER "./assets/pikachu.xpm"
 # define EXIT "./assets/ladder.xpm"
 
 # include "./minilibx/mlx.h"
