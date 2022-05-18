@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/18 16:15:24 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:35:12 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ int		ft_draw_img(t_game *game);
 void	ft_move_player(t_game *game, int x, int y);
 int		ft_move(int key, t_game *game);
 void	ft_wrapped_map(t_game *game);
+void	ft_check_lenght(char **map);
 
 #endif

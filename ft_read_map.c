@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:23:10 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/02 17:54:26 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:42:29 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	ft_read_map(t_game *game, char *file)
 	j = -1;
 	free(temp_line);
 	map1 = ft_split(line, '\n');
+	ft_check_lenght(map1);
 	if (line)
 		free(line);
 	while (map1[++j])
