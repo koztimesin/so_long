@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 17:14:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/12 16:37:05 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:17:05 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,17 @@ static int	close_game(t_game *game)
 	exit(0);
 }
 
-static int	render_next_frame(t_game *game)
+static void	ft_free(char **map)
 {
 	int	y;
-	int	x;
 
 	y = 0;
-	while (y < game->height)
+	while (map[y])
 	{
-		x = 0;
-		while (x < game->length)
-		{
-			// if (game->map[y][x] == 'C')
-			// 	ft_draw_map(game, TREAT, x * 64, y * 64);
-			if (game->map[y][x] == '1')
-				ft_draw_map(game, WALL, x * 64, y * 64);
-			if (game->map[y][x] == '0')
-				ft_draw_map(game, GROUND, x * 64, y * 64);
-			x++;
-		}
+		free(map[y]);
 		y++;
 	}
-	ft_draw_map(game, PLAYER, game->px * 64, (game->py - 1) * 64);
-	return (0);
+	free(map);
 }
 
 int	main(int argc, char **argv)
@@ -57,10 +45,9 @@ int	main(int argc, char **argv)
 	ft_get_into(&game);
 	ft_game_init(&game);
 	ft_wrapped_map(&game);
-	//mlx_hook(game.window, 2, 1L << 0, ft_move, &game);
+	ft_draw_img(&game);
 	mlx_hook(game.window, 2, 1L<<0, &ft_move, &game);
 	mlx_hook(game.window, 17, 1L<<0, &close_game, &game);
-	ft_draw_img(&game);
-	mlx_loop_hook(game.mlx, render_next_frame, &game);
 	mlx_loop(game.mlx);
+	ft_free(game.map);
 }
