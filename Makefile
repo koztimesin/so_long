@@ -6,7 +6,7 @@
 #    By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 17:10:08 by ksaffron          #+#    #+#              #
-#    Updated: 2022/05/24 14:53:57 by ksaffron         ###   ########.fr        #
+#    Updated: 2022/05/24 15:28:46 by ksaffron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ clean:
 	$(RM) $(OBJECTS)
 	make clean -C $(LIBFT_SOURCE)
 	make clean -C ./minilibx/ clean
-	rm libmlx.dylib
+	rm -f libmlx.dylib
 
 fclean: clean
 	$(RM) $(NAME)
