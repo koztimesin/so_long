@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 12:43:24 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/24 14:48:47 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:19:14 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_wrapped_map(t_game *game)
 
 	x = 0;
 	y = 0;
-	while(game->map[0][x])
+	while (game->map[0][x])
 	{
 		if (game->map[0][x] != '1' || game->map[game->height - 1][x] != '1')
 			ft_error();

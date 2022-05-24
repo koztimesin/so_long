@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 17:14:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/24 14:54:13 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:21:55 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main(int argc, char **argv)
 	ft_game_init(&game);
 	ft_wrapped_map(&game);
 	ft_draw_img(&game);
-	mlx_hook(game.window, 2, 1L<<0, &ft_move, &game);
-	mlx_hook(game.window, 17, 1L<<0, &close_game, &game);
+	mlx_hook(game.window, 2, 1L << 0, &ft_move, &game);
+	mlx_hook(game.window, 17, 1L << 0, &close_game, &game);
 	mlx_loop(game.mlx);
 	ft_free_space(game.map);
 }

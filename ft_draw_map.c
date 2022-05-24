@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_map.c                                         :+:      :+:    :+:   */
+/*   ft_draw_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 15:05:05 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/20 16:44:34 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:20:02 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ void	ft_draw_map(t_game *game, char *asset, int x, int y)
 
 int	ft_draw_img(t_game *game)
 {
-	int	x, y = 0;
+	int	x;
+	int	y;
 
+	y = 0;
 	while (y < game->height)
 	{
 		x = 0;
