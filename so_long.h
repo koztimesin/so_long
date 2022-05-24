@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/18 18:44:52 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:42:53 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,29 @@
 
 # define WALL "./assets/tile01.xpm"
 # define GROUND "./assets/tile00.xpm"
-# define TREAT "./assets/ketchup.xpm"
-# define PLAYER "./assets/pikachu.xpm"
+# define TREAT "./assets/ball.xpm"
+# define PLAYER "./assets/player.xpm"
 # define EXIT "./assets/ladder.xpm"
+# define STONE "./assets/stone.xpm"
 
 # include "./minilibx/mlx.h"
 # include "./libft/libft.h"
 # include <fcntl.h>
 
 typedef struct s_game {
-	char			**map;
-	void			*mlx;
-	void			*window;
-	int	height;
-	int	length;
-	int	px;
-	int	py;
-	int	coins;
-	int	status;
-	int	score;
-	int	moves;
+	char	**map;
+	void	*mlx;
+	void	*window;
+	int		height;
+	int		length;
+	int		px;
+	int		py;
+	int		coins;
+	int		status;
+	int		score;
+	int		moves;
+	int		ex;
+	int		ey;
 }				t_game;
 
 void	ft_read_map(t_game *game, char *file);
@@ -64,5 +67,6 @@ void	ft_move_player(t_game *game, int x, int y);
 int		ft_move(int key, t_game *game);
 void	ft_wrapped_map(t_game *game);
 void	ft_check_lenght(char **map);
+int		close_game(t_game *game);
 
 #endif

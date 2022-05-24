@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:30:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/18 16:14:34 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/20 16:47:00 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	ft_move_player(t_game *game, int x, int y)
 		game->map[game->py + y][game->px + x] = '0';
 		game->score++;
 	}
+	if (game->score == game->coins)
+		ft_draw_map(game, EXIT, game->ex * 64, game->ey * 64);
 	if (game->map[game->py + y][game->px + x] == 'E')
 	{
 		if (game->score == game->coins)

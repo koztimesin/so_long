@@ -6,20 +6,19 @@
 #    By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 17:10:08 by ksaffron          #+#    #+#              #
-#    Updated: 2022/05/12 16:36:50 by ksaffron         ###   ########.fr        #
+#    Updated: 2022/05/24 14:53:57 by ksaffron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
 CC = gcc
 
 HEADER = so_long.h
 
 SOURCE =	so_long.c ft_error.c ft_read_map.c \
-			correctmap.c map_size.c ft_game_init.c \
-			ft_get_info.c draw_map.c ft_move.c \
-			ft_correctmap2.c \
+			ft_correct_map.c ft_get_info.c ft_game_init.c \
+			ft_draw_map.c ft_move.c \
 
 OBJECTS = $(SOURCE:.c=.o)
 LIBFT_SOURCE = ./libft/

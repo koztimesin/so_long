@@ -6,12 +6,11 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:23:10 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/18 16:42:29 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:59:48 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 static char	*strjoin_ft(char const *s1, char const *s2)
 {
@@ -85,13 +84,4 @@ void	ft_read_map(t_game *game, char *file)
 	if (count + 1 != j)
 		ft_error();
 	game->map = map1;
-}
-
-void	ft_check_name(char *file)
-{
-	int	size;
-
-	size = ft_strlen(file);
-	if (ft_strncmp(&file[size - 4], ".ber\0", 5) || size < 5)
-		ft_error();
 }

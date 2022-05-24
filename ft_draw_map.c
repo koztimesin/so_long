@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 15:05:05 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/18 16:15:17 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/20 16:44:34 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_draw_img(t_game *game)
 		{
 			ft_draw_map(game, GROUND, x * 64, y * 64);
 			if (game->map[y][x] == 'E')
-				ft_draw_map(game, EXIT, x * 64, y * 64);
+				ft_draw_map(game, STONE, x * 64, y * 64);
 			else if (game->map[y][x] == '1')
 				ft_draw_map(game, WALL, x * 64, y * 64);
 			else if (game->map[y][x] == 'P')
