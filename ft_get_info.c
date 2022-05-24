@@ -6,13 +6,13 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 18:58:23 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/24 15:25:53 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/24 20:51:29 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	map_size(t_game *game)
+void	ft_map_size(t_game *game)
 {
 	int	x;
 	int	y;
@@ -27,14 +27,12 @@ void	map_size(t_game *game)
 	game->length = x;
 }
 
-void	ft_get_into(t_game *game)
+static void	ft_get_info_cycle(t_game *game, int *p, int *c)
 {
 	int	x;
 	int	y;
-	int	c;
 
 	y = -1;
-	c = 0;
 	while (++y < game->height)
 	{
 		x = -1;
@@ -44,13 +42,27 @@ void	ft_get_into(t_game *game)
 				game->px = x;
 			if (game->map[y][x] == 'P')
 				game->py = y;
+			if (game->map[y][x] == 'P')
+				*p += 1;
 			if (game->map[y][x] == 'E')
 				game->ex = x;
 			if (game->map[y][x] == 'E')
 				game->ey = y;
 			if (game->map[y][x] == 'C')
-				c++;
+				*c += 1;
 		}
 	}
+	if (*p != 1)
+		ft_error(game->map);
+}
+
+void	ft_get_info(t_game *game)
+{
+	int	c;
+	int	p;
+
+	c = 0;
+	p = 0;
+	ft_get_info_cycle(game, &p, &c);
 	game->coins = c;
 }

@@ -6,12 +6,12 @@
 #    By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 17:10:08 by ksaffron          #+#    #+#              #
-#    Updated: 2022/05/24 15:28:46 by ksaffron         ###   ########.fr        #
+#    Updated: 2022/05/24 21:07:28 by ksaffron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-FLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 CC = gcc
 
 HEADER = so_long.h

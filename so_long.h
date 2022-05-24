@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/24 14:42:53 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:06:30 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # define ESC 53
 
 # define KEYEXIT 17
-# define WIN 1
-# define LOSE 0
+# define OPEN 1
+# define CLOSE 0
 
 # define WALL "./assets/tile01.xpm"
 # define GROUND "./assets/tile00.xpm"
@@ -55,18 +55,18 @@ typedef struct s_game {
 }				t_game;
 
 void	ft_read_map(t_game *game, char *file);
-void	ft_error(void);
+void	ft_error(char **map);
 void	ft_check_name(char *file);
-void	ft_correctmap(char	**map);
-void	map_size(t_game *game);
+void	ft_correct_map(char	**map);
+void	ft_map_size(t_game *game);
 void	ft_game_init(t_game *game);
-void	ft_get_into(t_game *game);
+void	ft_get_info(t_game *game);
 void	ft_draw_map(t_game *game, char *asset, int x, int y);
 int		ft_draw_img(t_game *game);
 void	ft_move_player(t_game *game, int x, int y);
 int		ft_move(int key, t_game *game);
 void	ft_wrapped_map(t_game *game);
-void	ft_check_lenght(char **map);
-int		close_game(t_game *game);
+void	ft_check_length(char **map);
+int		ft_close_game(t_game *game);
 
 #endif
