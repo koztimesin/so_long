@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/25 16:01:48 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:06:31 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@
 # define ESC 53
 
 # define KEYEXIT 17
-# define OPEN 1
-# define CLOSE 0
 
 # define WALL "./assets/tile01.xpm"
 # define GROUND "./assets/tile00.xpm"
@@ -47,7 +45,6 @@ typedef struct s_game {
 	int		px;
 	int		py;
 	int		coins;
-	int		status;
 	int		score;
 	int		moves;
 	int		ex;
