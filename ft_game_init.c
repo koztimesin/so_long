@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:58:54 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/24 21:06:53 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:26:26 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_game_init(t_game *game)
 {
 	ft_correct_map(game->map);
-	ft_map_size(game);
 	ft_get_info(game);
 	ft_wrapped_map(game);
 	game->mlx = mlx_init();
