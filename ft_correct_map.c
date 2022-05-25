@@ -6,12 +6,11 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 12:43:24 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/25 16:02:23 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:28:13 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "stdio.h"
 
 void	ft_check_name(char *file)
 {

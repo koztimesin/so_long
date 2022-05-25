@@ -6,12 +6,11 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:30:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/25 16:02:18 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:27:32 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 static void	ft_print_move(t_game *game)
 {
