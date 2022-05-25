@@ -6,12 +6,11 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:38:06 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/02 16:57:53 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:28:00 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_count_words(char const *s, char c)
 {
