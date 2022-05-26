@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:30:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/25 17:27:32 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/26 18:02:18 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_move(int key, t_game *game)
 	return (0);
 }
 
-void	ft_move_player(t_game *game, int x, int y)
+static void	ft_move_player(t_game *game, int x, int y)
 {
 	if (game->map[game->py + y][game->px + x] == '1')
 		return ;
@@ -44,7 +44,7 @@ void	ft_move_player(t_game *game, int x, int y)
 		game->score++;
 	}
 	if (game->score == game->coins)
-		ft_draw_map(game, EXIT, game->ex * 64, game->ey * 64);
+		ft_draw_img(game, EXIT, game->ex * 64, game->ey * 64);
 	if (game->map[game->py + y][game->px + x] == 'E')
 	{
 		if (game->score == game->coins)
@@ -53,8 +53,8 @@ void	ft_move_player(t_game *game, int x, int y)
 			return ;
 	}
 	ft_print_move(game);
-	ft_draw_map(game, GROUND, game->px * 64, game->py * 64);
+	ft_draw_img(game, GROUND, game->px * 64, game->py * 64);
 	game->px = game->px + x;
 	game->py = game->py + y;
-	ft_draw_map(game, PLAYER, game->px * 64, game->py * 64);
+	ft_draw_img(game, PLAYER, game->px * 64, game->py * 64);
 }
