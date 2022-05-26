@@ -6,7 +6,7 @@
 #    By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 17:10:08 by ksaffron          #+#    #+#              #
-#    Updated: 2022/05/25 19:39:09 by ksaffron         ###   ########.fr        #
+#    Updated: 2022/05/26 18:10:29 by ksaffron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ SOURCE =	so_long.c ft_error.c ft_read_map.c \
 			ft_draw_map.c ft_move.c \
 
 SOURCE_B =	so_long_bonus.c ft_move_bonus.c ft_get_info_bonus.c \
-			ft_game_init_bonus.c ft_draw_map_bonus.c ft_direction_bonus.c \
-			ft_error.c ft_read_map_bonus.c ft_correct_map.c
+			ft_game_init_bonus.c ft_draw_map_bonus.c ft_error.c \
+			ft_read_map_bonus.c ft_correct_map.c
 
 OBJECTS = $(SOURCE:.c=.o)
 OBJECTS_B = $(SOURCE_B:.c=.o)
