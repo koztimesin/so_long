@@ -6,11 +6,12 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 18:58:23 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/25 16:02:19 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/26 21:17:57 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdio.h>
 
 void	ft_map_size(t_game *game)
 {
@@ -23,8 +24,6 @@ void	ft_map_size(t_game *game)
 		x++;
 	while (game->map[y])
 		y++;
-	if (x > 40 || y > 21)
-		ft_error(game->map);
 	game->height = y;
 	game->length = x;
 }
@@ -77,6 +76,8 @@ static void	ft_get_info_cycle(t_game *game, int *c)
 				*c += 1;
 		}
 	}
+	if (*c < 1)
+		ft_error(game->map);
 }
 
 void	ft_get_info(t_game *game)

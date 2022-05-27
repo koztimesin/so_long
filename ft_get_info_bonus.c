@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 19:30:52 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/25 19:33:34 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/27 15:52:38 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,40 @@ static void	ft_map_size_bonus(t_game_b *game)
 		x++;
 	while (game->map[y])
 		y++;
-	if (x > 40 || y > 21)
-		ft_error(game->map);
 	game->height = y;
 	game->length = x;
+}
+
+static void	ft_count(t_game *game)
+{
+	int	x;
+	int	y;
+	int	e;
+	int	p;
+
+	e = 0;
+	p = 0;
+	y = -1;
+	while (++y < game->height)
+	{
+		x = -1;
+		while (++x < game->length)
+		{
+			if (game->map[y][x] == 'E')
+				e++;
+			if (game->map[y][x] == 'P')
+				p++;
+		}
+	}
+	if (p != 1 || e < 1)
+		ft_error(game->map);
 }
 
 static void	ft_get_info_cycle_bonus(t_game_b *game, int *c)
 {
 	int	x;
 	int	y;
-	int	p;
 
-	p = 0;
 	y = -1;
 	while (++y < game->height)
 	{
@@ -46,14 +67,12 @@ static void	ft_get_info_cycle_bonus(t_game_b *game, int *c)
 				game->px = x;
 			if (game->map[y][x] == 'P')
 				game->py = y;
-			if (game->map[y][x] == 'P')
-				p++;
 			if (game->map[y][x] == 'C')
 				*c += 1;
 		}
 	}
-	if (p != 1)
-		ft_close_game_bonus(game);
+	if (*c < 1)
+		ft_error(game->map);
 }
 
 void	ft_get_info_bonus(t_game_b *game)
