@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:00:36 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/26 18:02:13 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/26 20:40:59 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ int		ft_move(int key, t_game *game);
 void	ft_wrapped_map(t_game *game);
 void	ft_check_length(char **map);
 int		ft_close_game(t_game *game);
+void	ft_game_error(t_game *game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:04:39 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/26 18:05:43 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/27 16:23:57 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int		ft_next_frame(t_game_b *game);
 void	ft_read_map_bonus(t_game_b *game, char *file);
 int		ft_close_game_bonus(t_game_b *game);
 void	ft_draw_img_bonus(t_game_b *game, char *asset, int x, int y);
+void	ft_game_error_bonus(t_game_b *game);
 
 #endif
