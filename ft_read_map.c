@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:23:10 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/25 16:02:17 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/27 14:21:12 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static char	*get_next_line(char *file)
 	{
 		size = read(fd, temp, BUFFER_SIZE);
 		if (size < 0)
-			return (NULL);
+			ft_error(NULL);
 		temp[size] = '\0';
 		temp_result = result;
 		result = strjoin_ft(temp_result, temp);
@@ -88,6 +88,8 @@ void	ft_read_map(t_game *game, char *file)
 	char	*temp_line;
 
 	line = get_next_line(file);
+	if (!line || !*line)
+		ft_error(NULL);
 	temp_line = ft_strtrim(line, "\n");
 	ft_check_map(game, temp_line, line);
 }
