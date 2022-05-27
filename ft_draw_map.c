@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 15:05:05 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/26 17:56:30 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/26 20:41:11 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_draw_img(t_game *game, char *asset, int x, int y)
 	int		img_width;
 
 	img = mlx_xpm_file_to_image(game->mlx, asset, &img_width, &img_height);
+	if (!img)
+		ft_game_error(game);
 	mlx_put_image_to_window(game->mlx, game->window, img, x, y);
 }
 

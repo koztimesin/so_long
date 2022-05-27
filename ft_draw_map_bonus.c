@@ -6,11 +6,20 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:59:03 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/26 18:05:22 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/27 16:26:11 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
+
+void	ft_game_error_bonus(t_game_b *game)
+{
+	mlx_destroy_window(game->mlx, game->window);
+	if (game->map)
+		ft_free_space(game->map);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
 
 void	ft_draw_img_bonus(t_game_b *game, char *asset, int x, int y)
 {
@@ -19,6 +28,8 @@ void	ft_draw_img_bonus(t_game_b *game, char *asset, int x, int y)
 	int		img_width;
 
 	img = mlx_xpm_file_to_image(game->mlx, asset, &img_width, &img_height);
+	if (!img)
+		ft_game_error_bonus(game);
 	mlx_put_image_to_window(game->mlx, game->window, img, x, y);
 }
 
