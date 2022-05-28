@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 19:30:52 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/27 15:52:38 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/28 19:22:27 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	ft_map_size_bonus(t_game_b *game)
 	game->length = x;
 }
 
-static void	ft_count(t_game *game)
+static void	ft_count_bonus(t_game_b *game)
 {
 	int	x;
 	int	y;
@@ -81,6 +81,7 @@ void	ft_get_info_bonus(t_game_b *game)
 
 	c = 0;
 	ft_map_size_bonus(game);
+	ft_count_bonus(game);
 	ft_get_info_cycle_bonus(game, &c);
 	game->coins = c;
 }

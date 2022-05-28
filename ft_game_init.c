@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:58:54 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/05/27 16:21:46 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/05/28 19:39:14 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_game_init(t_game *game)
 	if (!game->window)
 		ft_game_error(game);
 	mlx_get_screen_size(game->mlx, &x, &y);
-	if ((x / 64) > 40 || (y / 64) > 21)
-		ft_game_error(game);
+	// if ((x / 64) > 40 || (y / 64) > 21)
+	// 	ft_game_error(game);
 	ft_draw_map(game);
 }
